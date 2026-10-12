@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import type { FindingRow, SortDirection, SortField } from "../graphql/operations";
 import SeverityBadge from "./SeverityBadge.vue";
@@ -30,7 +31,9 @@ const columns: { key: string; label: string; sort?: SortField; class?: string }[
 
 const ariaSort = (f?: SortField) =>
   !f || f !== props.sort ? undefined : props.direction === "ASC" ? "ascending" : "descending";
-const fmtDate = (iso: string) => new Date(iso).toLocaleDateString(dateLocale(locale.value), { timeZone: "UTC" });
+// um formatador por idioma: toLocaleDateString com opções cria um novo a cada chamada (caro numa tabela inteira)
+const dateFmt = computed(() => new Intl.DateTimeFormat(dateLocale(locale.value), { timeZone: "UTC" }));
+const fmtDate = (iso: string) => dateFmt.value.format(new Date(iso));
 
 /** A linha inteira é clicável, mas o alvo de teclado é o botão no ID (um tab-stop por linha). */
 function onRowClick(e: MouseEvent, id: string) {

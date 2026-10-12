@@ -6,6 +6,8 @@ const pt = {
     theme: { dark: "Tema escuro", light: "Tema claro" },
     language: "Idioma",
     skip: "Pular para a tabela",
+    privacy: "Privacidade",
+    source: "Código-fonte",
   },
   summary: {
     total: "Achados no filtro",
@@ -151,6 +153,8 @@ const en: Messages = {
     theme: { dark: "Dark theme", light: "Light theme" },
     language: "Language",
     skip: "Skip to table",
+    privacy: "Privacy",
+    source: "Source code",
   },
   summary: {
     total: "Findings in filter",

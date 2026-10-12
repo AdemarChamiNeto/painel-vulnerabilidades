@@ -1,0 +1,8 @@
+# Painel de Vulnerabilidades
+
+> Painel de triagem de achados de segurança (SAST, DAST e SCA) feito em Vue 3, Pinia e GraphQL. Os dados são fictícios; os códigos CWE e as categorias OWASP Top 10 são reais. Projeto de portfólio de Ademar Chami Neto.
+
+- [Painel (demonstração)](https://ademarchamineto.github.io/painel-vulnerabilidades/): resumo por severidade e por categoria OWASP, filtros na URL, detalhe com cálculo do CVSS 3.1 e triagem com histórico.
+- [Privacidade](https://ademarchamineto.github.io/painel-vulnerabilidades/privacidade.html): o que fica no navegador e o que é coletado.
+- [Código-fonte](https://github.com/AdemarChamiNeto/painel-vulnerabilidades)
+- [Portfólio do autor](https://ademarchamineto.github.io/)

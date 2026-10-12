@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacidade — Painel de Vulnerabilidades</title>
+    <meta name="description" content="O que o Painel de Vulnerabilidades guarda no seu navegador e o que é coletado." />
+    <link rel="canonical" href="https://ademarchamineto.github.io/painel-vulnerabilidades/privacidade.html" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#120d12" />
+    <style>
+      body { margin: 0; background: #120d12; color: #f3e9e4; font: 16px/1.6 system-ui, sans-serif; }
+      main { max-width: 720px; margin: 0 auto; padding: 32px 20px 48px; }
+      h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.8em; }
+      a { color: #d38ae0; } button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid #6b4a6b; background: transparent; color: inherit; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><a href="./">← Voltar ao painel</a></p>
+      <h1>Privacidade</h1>
+      <p>Este é um projeto de portfólio com <strong>dados fictícios</strong>. Não existe cadastro, login nem servidor guardando informações suas.</p>
+
+      <h2>O que fica no seu navegador</h2>
+      <ul>
+        <li>As alterações de triagem que você fizer (status e justificativas) ficam no <code>localStorage</code> do navegador, só neste aparelho. Para apagar, limpe os dados do site.</li>
+        <li>O tema (claro ou escuro) e o idioma escolhidos.</li>
+        <li>A sua resposta ao aviso de cookies, se ele aparecer.</li>
+      </ul>
+
+      <h2>Estatísticas de uso (opcional)</h2>
+      <p>Se o aviso de cookies aparecer, é porque o site está configurado com o <strong>Google Analytics 4</strong> e/ou o <strong>Microsoft Clarity</strong>. Eles só são carregados se você clicar em <em>Aceitar</em> e servem para saber quais páginas e recursos são usados. Nenhum nome, email ou documento é enviado para eles. Se você recusar, nada é carregado.</p>
+      <p><button type="button" id="rever">Rever minha escolha de cookies</button> <span id="ok" role="status"></span></p>
+
+      <h2>Contato</h2>
+      <p>Dúvidas: pelo <a href="https://ademarchamineto.github.io/">portfólio do autor</a>.</p>
+    </main>
+    <script>
+      document.getElementById("rever").addEventListener("click", function () {
+        try { localStorage.removeItem("consent-analytics"); } catch (e) {}
+        document.getElementById("ok").textContent = "Pronto: o aviso aparece de novo quando você voltar ao painel.";
+      });
+    </script>
+  </body>
+</html>

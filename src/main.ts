@@ -5,6 +5,7 @@ import App from "./App.vue";
 import { createApolloClient, localTriageStorage } from "./graphql/client";
 import { createAppI18n, saveLocale, initialLocale } from "./i18n";
 import "./styles.css";
+import { initConsent } from "./consent";
 
 const locale = initialLocale();
 saveLocale(locale);
@@ -17,3 +18,6 @@ createApp({
   .use(createPinia())
   .use(createAppI18n(locale))
   .mount("#app");
+
+// GA4/Clarity só depois do aceite (e só se os IDs estiverem configurados no build)
+initConsent(`${import.meta.env.BASE_URL}privacidade.html`);

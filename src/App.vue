@@ -12,6 +12,7 @@ import FindingsTable from "./components/FindingsTable.vue";
 import PaginationBar from "./components/PaginationBar.vue";
 import FindingDrawer from "./components/FindingDrawer.vue";
 
+const base = import.meta.env.BASE_URL;
 const props = withDefaults(defineProps<{ syncUrl?: boolean }>(), { syncUrl: true });
 const store = useFindingsStore();
 const { locale } = useI18n();
@@ -93,6 +94,12 @@ watch(locale, (l) => (document.title = l === "en" ? "Vulnerability Dashboard" : 
     </section>
   </main>
 
+  <footer class="foot">
+    <a :href="`${base}privacidade.html`">{{ $t("app.privacy") }}</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/AdemarChamiNeto/painel-vulnerabilidades">{{ $t("app.source") }}</a>
+  </footer>
+
   <FindingDrawer v-if="store.selectedId" :id="store.selectedId" :key="store.selectedId" @close="store.selectedId = null" />
 </template>
 
@@ -105,6 +112,8 @@ h1 { margin: 0; font-size: 1.45rem; }
 .seg button { background: transparent; border: 0; padding: 6px 12px; cursor: pointer; min-height: 34px; }
 .seg button[aria-pressed="true"] { background: var(--accent-strong); color: #fff; }
 .layout { max-width: 1280px; margin: 0 auto; padding: 8px 24px 40px; display: grid; gap: 14px; }
+.foot { max-width: 1280px; margin: 0 auto; padding: 0 24px 32px; display: flex; gap: 8px; font-size: 0.85rem; color: var(--muted); }
+.foot a { color: inherit; }
 .notice { margin: 0; font-size: 0.85rem; color: var(--muted); border-left: 3px solid var(--accent); padding-left: 10px; }
 .table-area { display: grid; gap: 10px; }
 .table-area:focus { outline: none; }

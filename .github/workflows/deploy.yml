@@ -30,6 +30,9 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
+          # IDs públicos do GA4 e do Clarity (Settings → Secrets and variables → Actions → Variables). Vazios = sem analytics.
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
+          VITE_CLARITY_ID: ${{ vars.VITE_CLARITY_ID }}
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

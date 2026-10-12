@@ -21,6 +21,8 @@ Painel para triagem de achados de segurança vindos de ferramentas **SAST** (an�
 - **Detalhe:** local do achado, vetor CVSS com cada métrica traduzida, descrição e recomendação por CWE, e histórico de mudanças.
 - **Triagem:** mudança de status com **UI otimista**. *Risco aceito* e *Falso positivo* exigem justificativa, validada também no servidor. A triagem fica salva no navegador.
 - **PT/EN**, tema escuro e claro, layout responsivo.
+- **Pronto para publicar:** ícones (favicon, Apple, PWA), manifest, Open Graph com imagem 1200×630, JSON-LD (`WebApplication`), sitemap, `llms.txt`, página 404 e página de privacidade. Lighthouse 90+ em performance e 100 em acessibilidade, boas práticas e SEO.
+- **Estatísticas só com consentimento (LGPD):** Google Analytics 4 e Microsoft Clarity carregam apenas depois de "Aceitar". Sem os IDs configurados, nada é carregado e o aviso nem aparece.
 
 ## Arquitetura
 
@@ -58,7 +60,7 @@ tests/               domínio, API GraphQL, store e componentes
 ```bash
 npm install
 npm run dev          # http://localhost:5173
-npm test             # 31 testes
+npm test             # 35 testes
 npm run lint
 npm run type-check   # vue-tsc
 npm run build
@@ -69,6 +71,8 @@ npm run build
 O workflow `.github/workflows/deploy.yml` roda lint, type-check, testes e build a cada push. Na branch `main`, ele publica no GitHub Pages.
 
 Para ativar, vá em **Settings → Pages → Source: GitHub Actions**.
+
+GA4 e Clarity (opcionais): crie as variáveis `VITE_GA_ID` e `VITE_CLARITY_ID` em **Settings → Secrets and variables → Actions → Variables**. Os IDs são públicos (vão para o JavaScript do site), por isso são variáveis e não segredos.
 
 ## Próximos passos
 

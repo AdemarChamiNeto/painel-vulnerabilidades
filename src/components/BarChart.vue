@@ -15,7 +15,7 @@ const ROW = 28;
     <figcaption>{{ title }}<span v-if="hint" class="hint"> · {{ hint }}</span></figcaption>
     <ul class="rows">
       <li v-for="b in bars" :key="b.key">
-        <button type="button" class="row" :title="b.title" :aria-label="`${b.label}: ${b.count}`" @click="emit('select', b.key)">
+        <button type="button" class="row" :title="b.title" @click="emit('select', b.key)">
           <span class="label">{{ b.label }}</span>
           <svg class="bar" :height="ROW - 10" preserveAspectRatio="none" viewBox="0 0 100 10" aria-hidden="true">
             <rect x="0" y="0" height="10" rx="1.5" :width="(b.count / max) * 100" :fill="b.color ?? 'var(--accent)'" />

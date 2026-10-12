@@ -3,9 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Painel de triagem de vulnerabilidades em Vue 3, Pinia e GraphQL (dados fictícios)." />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 4 7v8c0 7.5 5 13 12 15 7-2 12-7.5 12-15V7z' fill='%239B1EAC'/%3E%3Cpath d='m11 16 4 4 7-8' stroke='%23EFCCAF' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
-    <title>Painel de Vulnerabilidades</title>
+    <title>Painel de Vulnerabilidades — triagem de achados de segurança</title>
+    <meta name="description" content="Painel de triagem de vulnerabilidades em Vue 3, Pinia e GraphQL: severidade CVSS, categorias OWASP Top 10, filtros na URL e histórico (dados fictícios)." />
+    <link rel="canonical" href="https://ademarchamineto.github.io/painel-vulnerabilidades/" />
+    <meta name="theme-color" content="#120d12" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Painel de Vulnerabilidades" />
+    <meta property="og:description" content="Achados de segurança com CVSS, filtros na URL e triagem com histórico. Vue 3, Pinia e GraphQL." />
+    <meta property="og:url" content="https://ademarchamineto.github.io/painel-vulnerabilidades/" />
+    <meta property="og:image" content="https://ademarchamineto.github.io/painel-vulnerabilidades/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Painel de Vulnerabilidades: resumo por severidade e por categoria OWASP" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Painel de Vulnerabilidades",
+        "url": "https://ademarchamineto.github.io/painel-vulnerabilidades/",
+        "description": "Painel de triagem de achados de segurança (SAST, DAST e SCA) com CVSS 3.1, categorias OWASP Top 10, filtros e histórico. Dados fictícios.",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Web",
+        "inLanguage": ["pt-BR", "en"],
+        "isAccessibleForFree": true,
+        "author": { "@type": "Person", "name": "Ademar Chami Neto", "url": "https://ademarchamineto.github.io/" }
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
