@@ -11,8 +11,9 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  # um grupo por branch: um PR não cancela o CI de outro nem o deploy da main; na main, um deploy não interrompe o anterior
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
