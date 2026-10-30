@@ -34,7 +34,7 @@ jobs:
           # IDs públicos do GA4 e do Clarity (Settings → Secrets and variables → Actions → Variables). Vazios = sem analytics.
           VITE_GA_ID: ${{ vars.VITE_GA_ID }}
           VITE_CLARITY_ID: ${{ vars.VITE_CLARITY_ID }}
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         if: github.ref == 'refs/heads/main'
         with:
           path: dist
